@@ -7,7 +7,7 @@ function SKO(A::Array)
         Sum1+=A[i]
         Sum2+=(A[i]*A[i])
     end
-    Sum=((Sum1)/(n)*(Sum1/n)) - (Sum2/n)
+    Sum=(Sum2/n) -((Sum1)/(n)*(Sum1/n))
     return sqrt(Sum)
 end
 
