@@ -1,12 +1,12 @@
 # 1)	Сортировка пузырьком. Issorted, sortperm!, sort!. Сортировка по значению функции .
 # n = parse(Int, readline())
-function bubblesort!(massive::AbstractArray)
-    n = length(massive)
-    for i in 1:n-1
+function puzir!(mas)
+    n = length(mas)
+    for k in 1:n-1
         istranspose = false
-        for i in firstindex(massive):lastindex(massive) - i
-            if massive[i] > massive[i + 1]
-                massive[i], massive[i + 1] = massive[i + 1], massive[i]
+        for i in firstindex(mas):lastindex(mas) - k
+            if mas[i] > mas[i + 1]
+                mas[i], mas[i + 1] = mas[i + 1], mas[i]
                 istranspose = true
             end
         end
@@ -14,11 +14,10 @@ function bubblesort!(massive::AbstractArray)
             break
         end
     end
-    return massive
+    return mas
 end
-
-a = [4, 5, 2, 6]
-bubblesort!(a)
+mas =[4,1,2,5,3,7]
+puzir!(mas)
 
 function iissorted(massive::AbstractArray)
     for i in firstindex(massive):lastindex(massive) - 1
