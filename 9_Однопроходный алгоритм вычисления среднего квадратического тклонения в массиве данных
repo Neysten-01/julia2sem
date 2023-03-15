@@ -4,10 +4,10 @@ function SKO(A::Array)
     n=length(A)
     Sum1=Sum2=0
     for i in 1:n
-        Sum1+=(A[i]*A[i])
-        Sum2+=A[i]
+        Sum1+=A[i]
+        Sum2+=(A[i]*A[i])
     end
-    Sum=((Sum1)/(n)) - (Sum2/n)*(Sum2/n)
+    Sum=((Sum1)/(n)*(Sum1/n)) - (Sum2/n)
     return sqrt(Sum)
 end
 
